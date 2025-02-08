@@ -38,7 +38,7 @@ export default {
   name: 'MyOrders',
   data() {
     return {
-      reservations: [], // Store reservations instead of books
+      reservations: [],
     };
   },
   mounted() {
@@ -48,7 +48,7 @@ export default {
     async loadReservations() {
       try {
         const response = await BooksService.getUserReservations();
-        this.reservations = response.data; // Use reservations data
+        this.reservations = response.data;
       } catch (error) {
         console.error('Error loading reservations:', error);
       }

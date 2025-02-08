@@ -55,7 +55,7 @@ export default {
         email: '',
         password: '',
         username: '',
-        role: 'User', // Default role is "User"
+        role: 'User',
       },
       validationErrors: {
         email: '',
@@ -84,25 +84,22 @@ export default {
         localStorage.setItem('token', response.data.token);
 
         this.setLogCheck(true);
-        localStorage.setItem('user', JSON.stringify(response.data.user)); // Assuming response.data.user contains user details
-        this.setUser(response.data.user); // Update Vuex store with the user data
+        localStorage.setItem('user', JSON.stringify(response.data.user));
+        this.setUser(response.data.user);
 
         if (response.data.role === 'admin') {
           this.setAdminCheck(true);
         }
 
-        // Reset form and validation errors
         this.resetForm();
 
-        // Navigate to the home page
-        this.$router.push('/'); // Redirect to home or any other page
+        this.$router.push('/');
         console.log('User created successfully:', response.data);
       } catch (error) {
         alert('Failed to sign up, username or email is already taken.');
       }
     },
 
-    // Form validation
     validateForm(password, username, email) {
       let isValid = true;
       this.validationErrors = {
@@ -129,7 +126,6 @@ export default {
       return isValid;
     },
 
-    // Reset the form data and validation errors
     resetForm() {
       this.formData = {
         email: '',

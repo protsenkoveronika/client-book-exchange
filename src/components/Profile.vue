@@ -43,7 +43,7 @@ export default {
       this.$router.push('/');
     },
     editProfile() {
-      this.$router.push('/editProfile'); // Navigate to the edit profile page
+      this.$router.push('/editProfile');
     },
   },
   created() {

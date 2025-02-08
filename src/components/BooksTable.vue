@@ -77,25 +77,6 @@ export default {
         console.error('Error loading books:', error);
       }
     },
-    // async deleteBook(bookId) {
-    //   if (!this.user || this.user.role !== 'admin') {
-    //     alert('Only admins can delete books.');
-    //     return;
-    //   }
-    //
-    //   if (!confirm('Are you sure you want to delete this book?')) {
-    //     return;
-    //   }
-    //
-    //   try {
-    //     await BooksService.delete(bookId);
-    //     this.books = this.books.filter((book) => book._id !== bookId);
-    //     alert('Book deleted successfully.');
-    //   } catch (error) {
-    //     console.error('Error deleting book:', error);
-    //     alert('Failed to delete book.');
-    //   }
-    // },
     async deleteBook(bookId) {
       if (!confirm('Are you sure you want to delete this book?')) {
         return;

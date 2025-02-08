@@ -152,10 +152,10 @@ export default {
       if (file) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          this.book.photoPreview = e.target.result; // Preview the image
+          this.book.photoPreview = e.target.result;
         };
         reader.readAsDataURL(file);
-        this.book.photoFile = file; // Store the file for upload
+        this.book.photoFile = file;
       }
     },
     adjustHeight() {
